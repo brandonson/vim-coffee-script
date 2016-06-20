@@ -74,8 +74,8 @@ syn match coffeeSpecialVar /\<\%(this\|prototype\|arguments\)\>/ display
 hi def link coffeeSpecialVar Special
 
 " An @-variable
-"syn match coffeeSpecialIdent /@\%(\%(\I\|\$\)\%(\i\|\$\)*\)\?/ display
-"hi def link coffeeSpecialIdent Identifier
+syn match coffeeSpecialIdent /@\%(\%(\I\|\$\)\%(\i\|\$\)*\)\?/ display
+hi def link coffeeSpecialIdent Identifier
 
 " A class-like name that starts with a capital letter
 syn match coffeeObject /\<\u\w*\>/ display
