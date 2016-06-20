@@ -19,10 +19,16 @@ syntax sync fromstart
 " priority for keywords is higher than matches. This causes keywords to be
 " highlighted inside matches, even if a match says it shouldn't contain them --
 " like with coffeeAssign and coffeeDot.
-syn match coffeeStatement /\<\%(return\|break\|continue\|throw\)\>/ display
+syn match coffeeRequire /\<\%(require\)\>/
+\    display
+hi def link coffeeRequire Include
+
+syn match coffeeStatement /\<\%(return\|break\|continue\|throw\)\>/
+\     display
 hi def link coffeeStatement Statement
 
-syn match coffeeRepeat /\<\%(for\|while\|until\|loop\)\>/ display
+syn match coffeeRepeat /\<\%(for\|while\|until\|loop\)\>/
+\  display
 hi def link coffeeRepeat Repeat
 
 syn match coffeeConditional /\<\%(if\|else\|unless\|switch\|when\|then\)\>/
@@ -32,7 +38,11 @@ hi def link coffeeConditional Conditional
 syn match coffeeException /\<\%(try\|catch\|finally\)\>/ display
 hi def link coffeeException Exception
 
-syn match coffeeKeyword /\<\%(new\|in\|of\|by\|and\|or\|not\|is\|isnt\|class\|extends\|super\|do\|yield\)\>/
+syn match coffeeClassWord /\<\%(class\|extends\|super\)\>/
+\                       display
+hi def link coffeeClassWord Type
+
+syn match coffeeKeyword /\<\%(new\|in\|of\|by\|and\|or\|not\|is\|isnt\|do\|yield\)\>/
 \                       display
 " The `own` keyword is only a keyword after `for`.
 syn match coffeeKeyword /\<for\s\+own\>/ contained containedin=coffeeRepeat
