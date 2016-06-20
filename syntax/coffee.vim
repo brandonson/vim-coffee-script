@@ -190,8 +190,8 @@ syn match coffeeSemicolonError /;$/ display
 hi def link coffeeSemicolonError Error
 
 " Ignore reserved words in dot accesses.
-"syn match coffeeDotAccess /\.\@<!\.\s*\%(\I\|\$\)\%(\i\|\$\)*/he=s+1 contains=@coffeeIdentifier
-"hi def link coffeeDotAccess coffeeExtendedOp
+syn match coffeeDotAccess /\.\@<!\.\s*\%(\I\|\$\)\%(\i\|\$\)*/he=s+1 contains=@coffeeIdentifier
+hi def link coffeeDotAccess coffeeExtendedOp
 
 " Ignore reserved words in prototype accesses.
 syn match coffeeProtoAccess /::\s*\%(\I\|\$\)\%(\i\|\$\)*/he=s+2 contains=@coffeeIdentifier
