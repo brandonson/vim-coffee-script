@@ -64,8 +64,8 @@ syn match coffeeSpecialVar /\<\%(this\|prototype\|arguments\)\>/ display
 hi def link coffeeSpecialVar Special
 
 " An @-variable
-syn match coffeeSpecialIdent /@\%(\%(\I\|\$\)\%(\i\|\$\)*\)\?/ display
-hi def link coffeeSpecialIdent Identifier
+"syn match coffeeSpecialIdent /@\%(\%(\I\|\$\)\%(\i\|\$\)*\)\?/ display
+"hi def link coffeeSpecialIdent Identifier
 
 " A class-like name that starts with a capital letter
 syn match coffeeObject /\<\u\w*\>/ display
@@ -180,20 +180,20 @@ syn match coffeeSemicolonError /;$/ display
 hi def link coffeeSemicolonError Error
 
 " Ignore reserved words in dot accesses.
-syn match coffeeDotAccess /\.\@<!\.\s*\%(\I\|\$\)\%(\i\|\$\)*/he=s+1 contains=@coffeeIdentifier
-hi def link coffeeDotAccess coffeeExtendedOp
+"syn match coffeeDotAccess /\.\@<!\.\s*\%(\I\|\$\)\%(\i\|\$\)*/he=s+1 contains=@coffeeIdentifier
+"hi def link coffeeDotAccess coffeeExtendedOp
 
 " Ignore reserved words in prototype accesses.
 syn match coffeeProtoAccess /::\s*\%(\I\|\$\)\%(\i\|\$\)*/he=s+2 contains=@coffeeIdentifier
 hi def link coffeeProtoAccess coffeeExtendedOp
 
 " This is required for interpolations to work.
-syn region coffeeCurlies matchgroup=coffeeCurly start=/{/ end=/}/
-\                        contains=@coffeeAll
-syn region coffeeBrackets matchgroup=coffeeBracket start=/\[/ end=/\]/
-\                         contains=@coffeeAll
-syn region coffeeParens matchgroup=coffeeParen start=/(/ end=/)/
-\                       contains=@coffeeAll
+"syn region coffeeCurlies matchgroup=coffeeCurly start=/{/ end=/}/
+"\                        contains=@coffeeAll
+"syn region coffeeBrackets matchgroup=coffeeBracket start=/\[/ end=/\]/
+"\                         contains=@coffeeAll
+"syn region coffeeParens matchgroup=coffeeParen start=/(/ end=/)/
+"\                       contains=@coffeeAll
 
 " These are highlighted the same as commas since they tend to go together.
 hi def link coffeeBlock coffeeSpecialOp
